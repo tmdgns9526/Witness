@@ -8,4 +8,8 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="txtBoxStyle">
+        <item name="android:background">@drawable/border</item>
+    </style>
+
 </resources>
