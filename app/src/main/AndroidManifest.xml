@@ -16,6 +16,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".NewMember" android:label="NewId 액티비티"/>
+        <activity android:name=".FindId" android:label="FindId 액티비티"/>
+
     </application>
 
 </manifest>
