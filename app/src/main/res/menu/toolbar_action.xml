@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/itemAlbum"
+        android:icon="@drawable/modify"
+        android:title="Album"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/itemMap"
+        android:icon="@drawable/remove"
+        android:title="Map"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/itemNotice"
+        android:icon="@drawable/remove"
+        android:title="Notice"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/itemMore"
+        android:icon="@drawable/remove"
+        android:title="More"
+        app:showAsAction="always" />
+
+</menu>
