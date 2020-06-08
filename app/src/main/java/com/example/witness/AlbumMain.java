@@ -19,6 +19,7 @@ import java.util.ArrayList;
 public class AlbumMain extends BaseActivity {
 
     Integer[] abc = {R.drawable.couple1, R.drawable.couple2, R.drawable.couple3, R.drawable.couple4, R.drawable.couple5, R.drawable.couple6, R.drawable.couple7};
+    String abcd = "abcdeasdfasdf";
 
     ArrayList<Bitmap> img;
     ArrayList<String> img_title;
