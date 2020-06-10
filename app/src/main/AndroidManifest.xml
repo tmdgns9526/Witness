@@ -19,6 +19,7 @@
         <activity android:name=".BucketList" android:label="버킷리스트 액티비티"/>
         <activity android:name=".HundredQnAFragment" android:label="백문백답 액티비티"/>
         <activity android:name=".AlbumMain" android:label="앨범 액티비티"/>
+        <activity android:name=".AlbumDetail" android:label="앨범 상세 화면 액티비티"/>
     </application>
 
 </manifest>
