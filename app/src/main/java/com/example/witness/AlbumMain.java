@@ -134,10 +134,10 @@ public class AlbumMain extends BaseActivity {
                     dlg.setNegativeButton("취소", null);
                     dlg.show();
 
-                    deleteWork=0;
-                    for(int i=0; i<deleteCheck.size(); i++) {
-                        deleteCheck.add(i, 0);
-                    }
+                  // deleteWork=0;
+                   // for(int i=0; i<deleteCheck.size(); i++) {
+                   //     deleteCheck.add(i, 0);
+                   // }
                 }
             }
         });
