@@ -26,6 +26,8 @@ public class AlbumDetail extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.album_detail);
 
+        String abc;
+
         ImageView imgView = findViewById(R.id.imgView);
         TextView tvTitle = findViewById(R.id.tvTitle);
         TextView tvText = findViewById(R.id.tvText);
