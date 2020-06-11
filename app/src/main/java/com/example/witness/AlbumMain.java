@@ -99,45 +99,60 @@ public class AlbumMain extends BaseActivity {
         imgDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(deleteWork==0) {
+                if (deleteWork == 0) {
                     isDelete = 1;
                     Toast.makeText(AlbumMain.this, "삭제할 이미지를 선택해주세요", Toast.LENGTH_SHORT).show();
-                    deleteWork=1;
-                }
-                else {
-                    //삭제하기
-                    int count=0;
-                    for(int i=0; i<deleteCheck.size(); i++) {
-                        if(deleteCheck.get(i) == 1) {
+                    deleteWork = 1;
+                } else {
+                    int count = 0;
+                    for (int i = 0; i < deleteCheck.size(); i++) {
+                        if (deleteCheck.get(i) == 1) {
                             count++;
                         }
                     }
 
-                    AlertDialog.Builder dlg = new AlertDialog.Builder(AlbumMain.this);
-                    dlg.setTitle("삭제");
-                    dlg.setMessage(count + "개의 앨범을 삭제하시겠습니까?");
-                    dlg.setPositiveButton("확인", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            for(int i=0; i<deleteCheck.size(); i++) {
-                                if(deleteCheck.get(i) == 1) {
-                                    img.remove(i);
-                                    img_date.remove(i);
-                                    img_title.remove(i);
-                                    img_text.remove(i);
-                                    gAdapter.notifyDataSetChanged();
+                    if (count == 0) {
+                        Toast.makeText(AlbumMain.this, "선택한 앨범이 없습니다.", Toast.LENGTH_SHORT).show();
+                        isDelete = 0;
+                        deleteWork = 0;
+                    } else {
+                        AlertDialog.Builder dlg = new AlertDialog.Builder(AlbumMain.this);
+                        dlg.setTitle("삭제");
+                        dlg.setMessage(count + "개의 앨범을 삭제하시겠습니까?");
+                        dlg.setPositiveButton("확인", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                for (int i = img.size()-1; i >= 0; i--) {
+                                    if (deleteCheck.get(i) == 1) {
+                                        img.remove(i);
+                                        img_date.remove(i);
+                                        img_title.remove(i);
+                                        img_text.remove(i);
+                                        deleteCheck.remove(i);
+                                    }
                                 }
+                                isDelete = 0;
+                                deleteWork = 0;
+                                //for(int i=0; i<deleteCheck.size(); i++) {
+                                //    deleteCheck.set(i, 0);
+                                //}
+                                gAdapter.notifyDataSetChanged();
                             }
-                        }
-                    });
+                        });
 
-                    dlg.setNegativeButton("취소", null);
-                    dlg.show();
-
-                  // deleteWork=0;
-                   // for(int i=0; i<deleteCheck.size(); i++) {
-                   //     deleteCheck.add(i, 0);
-                   // }
+                        dlg.setNegativeButton("취소", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                isDelete = 0;
+                                deleteWork = 0;
+                                //for(int i=0; i<deleteCheck.size(); i++) {
+                                //   deleteCheck.set(i, 0);
+                                //}
+                                gAdapter.notifyDataSetChanged();
+                            }
+                        });
+                        dlg.show();
+                    }
                 }
             }
         });
@@ -190,10 +205,10 @@ public class AlbumMain extends BaseActivity {
                     } else {
                         if (deleteCheck.get(pos) == 0) {
                             ivG.setColorFilter(Color.parseColor("#88000000"));
-                            deleteCheck.add(pos, 1);
+                            deleteCheck.set(pos, 1);
                         } else {
                             ivG.setColorFilter(null);
-                            deleteCheck.add(pos, 0);
+                            deleteCheck.set(pos, 0);
                         }
                     }
                 }
