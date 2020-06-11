@@ -1,7 +1,11 @@
 package pjh.mjc.witness;
 
 import android.app.TabActivity;
+import android.media.Image;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TabHost;
 
 import androidx.annotation.Nullable;
@@ -15,6 +19,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 @SuppressWarnings("deprecation")
 public class FindId extends TabActivity {
+    ImageButton btnBack;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +35,13 @@ public class FindId extends TabActivity {
         tabHost.addTab(tabSpecPw);
 
         tabHost.setCurrentTab(0);
+        btnBack = (ImageButton)findViewById(R.id.buttonBack);
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
     }
 }

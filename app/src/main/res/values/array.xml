@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="도메인">
+    <string-array name="domain">
         <item>naver.com</item>
         <item>daum.net</item>
         <item>gmail.com</item>
